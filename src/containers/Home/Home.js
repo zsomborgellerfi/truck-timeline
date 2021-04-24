@@ -1,16 +1,23 @@
-import React from 'react'
-import { Container } from '@material-ui/core'
+import React from 'react';
+import { Container } from '@material-ui/core';
+import moment from 'moment';
 
-import { processData } from '../../lib'
-import { TRUCK_DATA } from '../../lib/constants'
-import FilterInput from '../../components/FilterInput'
-import TruckTimeline from '../../components/TruckTimeline'
+import FilterInput from '../../components/FilterInput';
+import TruckTimeline from '../../components/TruckTimeline';
+import Timeline from '../../components/Timeline';
 
-import './Home.scss'
+import { processTrucksData, processData } from '../../lib';
+import { TRUCK_DATA } from '../../lib/constants';
+
+import './Home.scss';
 
 export const Home = () => {
-  const initialData = React.useMemo(() => processData(TRUCK_DATA), [])
-  const [selectedTruck, setSelectedTruck] = React.useState(null)
+  const initialData = React.useMemo(() => processData(TRUCK_DATA), []);
+  const [selectedTruck, setSelectedTruck] = React.useState(null);
+
+  
+  const trucks = React.useMemo(() => processTrucksData(TRUCK_DATA), []);
+
   return (
     <div className="home">
       <Container>
@@ -24,7 +31,13 @@ export const Home = () => {
           trucks={selectedTruck ? [selectedTruck] : initialData.trucks}
           orders={initialData.orders}
         />
+        <div className="timeline-wrapper">
+          <Timeline
+            rows={selectedTruck ? {[selectedTruck.id]: trucks[selectedTruck.id]} : trucks}
+            initialDate={moment(initialData.orders[0].start_time)}
+          />
+        </div>
       </Container>
     </div>
-  )
-}
+  );
+};
