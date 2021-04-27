@@ -1,12 +1,13 @@
-.timeline-row {
+.truck-row {
   position: relative;
   display: flex;
   align-items: center;
   &_sidebar {
-    border-bottom: 1px solid #bbb;
+    border: 1px solid #bbb;
     display: flex;
     align-items: center;
   }
+
   &_lines {
     position: absolute;
     height: 100%;

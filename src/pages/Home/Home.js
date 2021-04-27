@@ -3,38 +3,31 @@ import { Container } from '@material-ui/core';
 import moment from 'moment';
 
 import FilterInput from '../../components/FilterInput';
-import TruckTimeline from '../../components/TruckTimeline';
-import Timeline from '../../components/Timeline';
+import Timeline from '../../containers/Timeline';
 
-import { processTrucksData, processData } from '../../lib';
+import { processTrucksData } from '../../lib';
 import { TRUCK_DATA } from '../../lib/constants';
 
 import './Home.scss';
 
 export const Home = () => {
-  const initialData = React.useMemo(() => processData(TRUCK_DATA), []);
   const [selectedTruck, setSelectedTruck] = React.useState(null);
-
-  
   const trucks = React.useMemo(() => processTrucksData(TRUCK_DATA), []);
 
+  console.log(trucks,TRUCK_DATA, selectedTruck)
   return (
     <div className="home">
       <Container>
         <div className="filter-wrapper">
           <FilterInput
-            trucks={initialData.trucks}
+            trucks={trucks}
             onChange={(_event, truck) => setSelectedTruck(truck)}
           />
         </div>
-        <TruckTimeline
-          trucks={selectedTruck ? [selectedTruck] : initialData.trucks}
-          orders={initialData.orders}
-        />
         <div className="timeline-wrapper">
           <Timeline
-            rows={selectedTruck ? {[selectedTruck.id]: trucks[selectedTruck.id]} : trucks}
-            initialDate={moment(initialData.orders[0].start_time)}
+            trucks={selectedTruck ? {[selectedTruck.id]: trucks[selectedTruck.id]} : trucks}
+            initialDate={moment(TRUCK_DATA.orders[0].from)}
           />
         </div>
       </Container>

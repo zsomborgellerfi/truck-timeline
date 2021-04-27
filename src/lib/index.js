@@ -1,30 +1,5 @@
 import moment from 'moment';
 
-export const processData = (truckData) => {
-  const findTruckByOrderId = (orderId) => {
-    return truckData.trucks.find((truck) =>
-      truck.assignedOrderId.includes(orderId)
-    );
-  };
-  const createTrucks = (trucks) => {
-    return trucks.map((truck) => ({ id: truck.name, title: truck.name }));
-  };
-  const createOrders = (orders) => {
-    return orders.map((order) => ({
-      id: order.id,
-      group: findTruckByOrderId(order.id)?.name,
-      title: order.id,
-      start_time: moment(order.from),
-      end_time: moment(order.to),
-    }));
-  };
-
-  return {
-    trucks: createTrucks(truckData.trucks),
-    orders: createOrders(truckData.orders),
-  };
-};
-
 export const processTrucksData = (truckData) => {
   const orders = truckData.orders.reduce((acc, curr) => {
     acc[curr.id] = curr;
@@ -34,6 +9,7 @@ export const processTrucksData = (truckData) => {
   const trucks = truckData.trucks.reduce((acc, curr) => {
     acc[curr.name] = {
       ...curr,
+      id: curr.name,
       orders: curr.assignedOrderId.map((orderId) => {
         return {
           ...orders[orderId],
@@ -59,3 +35,11 @@ export const calculateDuration = (start, end) => {
   const duration = moment.duration(end.diff(start));
   return duration.asHours() ;
 };
+
+export const createTrucksArray = (trucks) => {
+  return trucks.map((truck) => ({ id: truck.name, title: truck.name }));
+};
+
+export const getFullWidth = () => {
+
+}

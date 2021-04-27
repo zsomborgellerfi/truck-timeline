@@ -91,7 +91,6 @@ export const TRUCK_DATA ={
 }
 export const SIDEBAR_WIDTH = 100;
 export const TIMELINE_WIDTH = 1100;
-export const ROOT_WIDTH = TIMELINE_WIDTH + SIDEBAR_WIDTH
 export const HOURS_IN_DAY = 24;
 export const WIDTH_PER_HOUR = TIMELINE_WIDTH / HOURS_IN_DAY;
 

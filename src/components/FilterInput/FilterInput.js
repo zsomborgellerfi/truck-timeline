@@ -3,11 +3,17 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export const FilterInput = ({trucks, onChange, value}) => {
+  const trucksList = Object.keys(trucks).map(truckId => {
+    return (
+      trucks[truckId]
+    )
+  })
+  console.log(trucksList)
   return (
     <Autocomplete
       id="filter-input"
-      options={trucks}
-      getOptionLabel={(option) => option.title}
+      options={trucksList}
+      getOptionLabel={(option) => option.name}
       style={{ width: 300 }}
       renderInput={(params) => (
         <TextField {...params} label="Filter trucks" variant="outlined" />

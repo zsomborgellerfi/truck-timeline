@@ -6,10 +6,10 @@ import {
   WIDTH_PER_HOUR,
 } from '../../lib/constants';
 import OrderMarker from '../OrderMarker';
-import './TimelineRow.scss';
+import './TruckRow.scss';
 
-export const TimelineRow = ({ row, selectedDate, idx }) => {
-  const { orders } = row;
+export const TruckRow = ({ truck, selectedDate, idx }) => {
+  const { orders } = truck;
   const currentOrders = orders.reduce((acc, curr) => {
     if (
       selectedDate.isBefore(curr.from, 'day') ||
@@ -38,18 +38,18 @@ export const TimelineRow = ({ row, selectedDate, idx }) => {
 
   if (!currentOrders.length) return null;
   return (
-    <div className={'timeline-row'} style={{ height: ORDER_HEIGHT }}>
-      <span className={'timeline-row_sidebar'} style={{width: SIDEBAR_WIDTH, height: ORDER_HEIGHT}}>{row.name}</span>
+    <div className={'truck-row'} style={{ height: ORDER_HEIGHT }}>
+      <span className={'truck-row_sidebar'} style={{width: SIDEBAR_WIDTH, height: ORDER_HEIGHT}}>{truck.name}</span>
       <div
-        className={`timeline-row_lines ${
-          idx % 2 ? 'timeline-row_lines--odd' : 'timeline-row_lines--even'
+        className={`truck-row_lines ${
+          idx % 2 ? 'truck-row_lines--odd' : 'truck-row_lines--even'
         }`}
         style={{left: SIDEBAR_WIDTH, width: TIMELINE_WIDTH}}
       >
         {[...Array(HOURS_IN_DAY)].map((_e, i) => (
           <span
             key={i}
-            className={'timeline-row_lines--block'}
+            className={'truck-row_lines--block'}
             style={{ left: i * WIDTH_PER_HOUR, width: WIDTH_PER_HOUR }}
           />
         ))}

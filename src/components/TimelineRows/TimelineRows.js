@@ -1,15 +1,15 @@
-import TimelineRow from '../TimelineRow';
+import TruckRow from '../TruckRow';
 import './TimelineRows.scss';
 
-export const TimelineRows = ({ rows, selectedDate }) => {
+export const TimelineRows = ({ trucks, selectedDate }) => {
   return (
     <div className={'timeline-rows'}>
-      {Object.keys(rows).map((key, idx) => {
+      {Object.keys(trucks).map((truckId, idx) => {
         return (
-          <TimelineRow
-            key={key}
+          <TruckRow
+            key={truckId}
             idx={idx}
-            row={rows[key]}
+            truck={trucks[truckId]}
             selectedDate={selectedDate}
           />
         );
