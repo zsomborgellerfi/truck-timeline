@@ -94,4 +94,4 @@ export const TIMELINE_WIDTH = 1100;
 export const HOURS_IN_DAY = 24;
 export const WIDTH_PER_HOUR = TIMELINE_WIDTH / HOURS_IN_DAY;
 
-export const ORDER_HEIGHT = 30;
+export const TRUCK_ROW_HEIGHT = 30;

@@ -11,12 +11,6 @@
   &_lines {
     position: absolute;
     height: 100%;
-    &--even {
-      background: transparent;
-    }
-    &--odd {
-      background: rgba(0, 0, 0, 0.05);
-    }
     &--block {
       position: absolute;
       border-right: 1px solid #bbb;

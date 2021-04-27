@@ -8,7 +8,7 @@ export const OrderMarker = ({ order }) => {
     <div
       className={'order-marker'}
       style={{ left: positionX + SIDEBAR_WIDTH, width: duration * WIDTH_PER_HOUR }}
-    >
+      data-testid={"order-marker"}    >
       {order.name}
     </div>
   );

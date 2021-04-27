@@ -20,7 +20,7 @@ export const TimelineHeader = ({ selectedDate, setSelectedDate }) => {
   };
 
   return (
-    <div className={'timeline-header_container'}>
+    <div className={'timeline-header_container'} data-testid="timeline-header">
       <div
         className={'timeline-header'}
         style={{ marginLeft: SIDEBAR_WIDTH, width: TIMELINE_WIDTH }}
@@ -34,7 +34,7 @@ export const TimelineHeader = ({ selectedDate, setSelectedDate }) => {
           >
             Previous
           </Button>
-          <div>{selectedDate.format('MMMM Do YYYY')}</div>
+          <div data-testid="timeline-header-date">{selectedDate.format('MMMM Do YYYY')}</div>
           <Button
             variant="contained"
             color="primary"

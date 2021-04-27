@@ -2,13 +2,8 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
-export const FilterInput = ({trucks, onChange, value}) => {
-  const trucksList = Object.keys(trucks).map(truckId => {
-    return (
-      trucks[truckId]
-    )
-  })
-  console.log(trucksList)
+export const FilterInput = ({ trucks, onChange }) => {
+  const trucksList = Object.keys(trucks).map((truckId) => trucks[truckId]);
   return (
     <Autocomplete
       id="filter-input"
@@ -19,7 +14,6 @@ export const FilterInput = ({trucks, onChange, value}) => {
         <TextField {...params} label="Filter trucks" variant="outlined" />
       )}
       onChange={onChange}
-      
     />
-  )
-}
+  );
+};

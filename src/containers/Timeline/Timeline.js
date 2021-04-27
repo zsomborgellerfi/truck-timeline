@@ -11,8 +11,12 @@ export const Timeline = ({ trucks, initialDate }) => {
       <TimelineHeader
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}
+        
       />
-      <TimelineRows trucks={trucks} selectedDate={selectedDate} />
+      <TimelineRows
+        trucks={trucks}
+        selectedDate={selectedDate}
+      />
     </div>
   );
 };
