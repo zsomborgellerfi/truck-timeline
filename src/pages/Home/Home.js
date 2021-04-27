@@ -14,7 +14,6 @@ export const Home = () => {
   const [selectedTruck, setSelectedTruck] = React.useState(null);
   const trucks = React.useMemo(() => processTrucksData(TRUCK_DATA), []);
 
-  console.log(trucks,TRUCK_DATA, selectedTruck)
   return (
     <div className="home">
       <Container>
