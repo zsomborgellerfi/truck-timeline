@@ -1,3 +1,4 @@
+// input data
 export const TRUCK_DATA ={ 
   "trucks": [
       { "name": "OOF692", "assignedOrderId": [ "order1","order2" ]},
@@ -89,9 +90,13 @@ export const TRUCK_DATA ={
       { "id": "order68", "from": "2020.02.04 15:58:00", "to": "2020.02.05 07:01:00" }
   ]
 }
+
+// styles
 export const SIDEBAR_WIDTH = 100;
 export const TIMELINE_WIDTH = 1100;
+export const TRUCK_ROW_HEIGHT = 30;
+
+// misc
 export const HOURS_IN_DAY = 24;
 export const WIDTH_PER_HOUR = TIMELINE_WIDTH / HOURS_IN_DAY;
 
-export const TRUCK_ROW_HEIGHT = 30;

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { getRelevantTrucksByDate } from '../../lib';
-import TruckRow from '../TruckRow';
+import TruckRow from '../../components/TruckRow';
 import './TimelineRows.scss';
 
 export const TimelineRows = ({ trucks, selectedDate }) => {

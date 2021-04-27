@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TimelineHeader from '../../components/TimelineHeader';
-import TimelineRows from '../../components/TimelineRows';
+import TimelineHeader from '../TimelineHeader';
+import TimelineRows from '../TimelineRows';
 import './Timeline.scss';
 
 export const Timeline = ({ trucks, initialDate }) => {

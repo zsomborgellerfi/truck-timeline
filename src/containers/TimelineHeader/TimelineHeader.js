@@ -1,5 +1,6 @@
 import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
+import { Button } from '@material-ui/core';
 
 import {
   HOURS_IN_DAY,
@@ -8,8 +9,8 @@ import {
   WIDTH_PER_HOUR,
 } from '../../lib/constants';
 import { numberToTime } from '../../lib';
+
 import './TimelineHeader.scss';
-import { Button } from '@material-ui/core';
 
 export const TimelineHeader = ({ selectedDate, setSelectedDate }) => {
   const goToPrevDay = () => {
@@ -34,7 +35,9 @@ export const TimelineHeader = ({ selectedDate, setSelectedDate }) => {
           >
             Previous
           </Button>
-          <div data-testid="timeline-header-date">{selectedDate.format('MMMM Do YYYY')}</div>
+          <div data-testid="timeline-header-date">
+            {selectedDate.format('MMMM Do YYYY')}
+          </div>
           <Button
             variant="contained"
             color="primary"

@@ -8,8 +8,8 @@ const testTruckRowProps = {
       {
         id: '1',
         name: 'order 1',
-        from: moment('1970-01-01'),
-        to: moment('1970-01-02'),
+        localeFrom: moment('1970-01-01 01:00'),
+        localeTo: moment('1970-01-02 02:00'),
       },
     ],
   },
