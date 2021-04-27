@@ -1,0 +1,24 @@
+.truck-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &_sidebar {
+    border: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+  }
+
+  &_lines {
+    position: absolute;
+    height: 100%;
+    &--block {
+      position: absolute;
+      border-right: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      height: 100%;
+      &:first-of-type {
+        border-left: 1px solid #bbb;
+      }
+    }
+  }
+}

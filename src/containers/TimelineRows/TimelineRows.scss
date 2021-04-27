@@ -1,0 +1,19 @@
+.timeline-rows {
+  display: block;
+  .no-trucks-message {
+    padding: 30px 40px;
+    text-align: center;
+    font-size: 28px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.truck-row-wrapper {
+  &:nth-of-type(even) {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
