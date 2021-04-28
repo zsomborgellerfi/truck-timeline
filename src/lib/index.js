@@ -66,7 +66,6 @@ export const getRelevantOrdersByDate = (truck, selectedDate) => {
     orderAcc.push(orderCurr);
     return orderAcc;
   }, []);
-
   return relevantOrders;
 };
 
